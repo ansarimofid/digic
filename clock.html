@@ -1,0 +1,96 @@
+<html>
+    <head>
+        <title>Digi_Clock</title>
+        <link href="css/stylesheet.css" type="text/css" rel="stylesheet">
+        <link>
+    </head>
+    
+    <body onload="update_clock();setInterval('update_clock()',1000)">
+        <div id="main_box">
+             <div id="row_1">
+                 <div class="blocks" id="hrsp">h+</div>
+                 &nbsp;&nbsp;&nbsp;
+                 <div class="blocks" id="minp">m+</div>
+                  &nbsp;&nbsp;&nbsp;
+                 <div class="blocks" id="secp">s+</div>
+                  &nbsp;&nbsp;&nbsp;
+            </div> 
+             <div id="row_2">
+                 <div class="blocks" id="hrs">h</div>
+                  &nbsp;&nbsp;&nbsp;
+                 <div class="blocks" id="min">m</div>
+                  &nbsp;&nbsp;&nbsp;
+                 <div class="blocks" id="sec">s</div>
+                  &nbsp;&nbsp;&nbsp;
+            </div>
+             <div id="row_3">
+                 <div class="blocks" id="hrsn">h-</div>
+                  &nbsp;&nbsp;&nbsp;
+                 <div class="blocks" id="minn">m-</div>
+                  &nbsp;&nbsp;&nbsp;
+                 <div class="blocks" id="secn">s-</div>
+                  &nbsp;&nbsp;&nbsp;
+            </div>
+        
+        </div>
+        <script>
+           function update_clock()
+            {
+                dte=new Date;
+                
+                //for seconds
+                var _sec=dte.getSeconds();
+                var _secp=parseInt(_sec)+1;
+                var _secn=_sec-1;
+                
+                _secn=(_secn==-1?"59":_secn);
+                _secp=(_secp==60?"0":_secp);
+                
+                _sec=(_sec<10?"0":"")+_sec;
+                _secp=(_secp<10?"0":"")+_secp;
+                _secn=(_secn<10?"0":"")+_secn;
+                
+                document.getElementById("sec").innerHTML=_sec;
+                document.getElementById("secn").innerHTML=_secn;
+                document.getElementById("secp").innerHTML=_secp;
+                
+                
+                //For minutes
+                var _min=dte.getMinutes();
+                var _minp=parseInt(_min)+1;
+                var _minn=_min-1;
+                
+                _minn=(_minn==-1?"59":_minn);
+                _minp=(_minp==60?"0":_minp);
+                
+                _min=(_min<10?"0":"")+_min;
+                _minp=(_minp<10?"0":"")+_minp;
+                _minn=(_minn<10?"0":"")+_minn;
+                
+                document.getElementById("min").innerHTML=_min;
+                document.getElementById("minn").innerHTML=_minn;
+                document.getElementById("minp").innerHTML=_minp;
+                
+                //hours
+                
+                var _hrs=dte.getHours();
+                var _hrsp=parseInt(_hrs)+1;
+                var _hrsn=_hrs-1;
+                
+                _hrsn=(_hrsn==-1?"23":_hrsn);
+                _hrsp=(_hrsp==24?"0":_hrsp);
+                
+                _hrs=(_hrs<10?"0":"")+_hrs;
+                _hrsp=(_hrsp<10?"0":"")+_hrsp;
+                _hrsn=(_hrsn<10?"0":"")+_hrsn;
+                
+                document.getElementById("hrs").innerHTML=_hrs;
+                document.getElementById("hrsn").innerHTML=_hrsn;
+                document.getElementById("hrsp").innerHTML=_hrsp;
+                
+                
+                
+            }
+        </script>
+    </body>
+</html>
