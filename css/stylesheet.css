@@ -2,10 +2,12 @@
 #main_box {
     border: 2px solid black;
     width: 800px;
-    height: 400px;
+    height: auto;
     display:inline-block;
     text-align: center;
     background-color:darkslategrey;
+    padding-bottom: 30px;
+    padding-top: 30px;
         
 }
 
@@ -43,4 +45,27 @@ body {
 #row_3 {
     color:cadetblue;
      opacity: 0.8;
+}
+
+#clock {
+    
+}
+
+#date {
+    margin-top: 10px;
+    font-size: 50;
+    color: aliceblue;
+    
+}
+
+.tick {
+    
+    display: inline;
+    font-size: 70px;
+    color: aliceblue;
+ 
+}
+
+#date.div {
+    font-size: 20px;
 }
